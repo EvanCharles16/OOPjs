@@ -14,7 +14,7 @@ const newCoffee = new Coffee({
 })
 
 
-// class extends 
+// class extends #1
 class Cafe extends Coffee{
     constructor(obj = {}) {
         super(obj);
@@ -28,4 +28,23 @@ const detailCafe = new Cafe({
     category : 'Arabica',
     name : 'Sevendays'
 })
-console.log(detailCafe);
+
+// class extends #2
+class Location extends Cafe {
+    constructor(obj = {}) {
+        super(obj);
+        this.long = obj.long,
+        this.lat = obj.lat
+    }
+}
+
+const locationMap = new Location ({
+    bean : ['Gayo red honey', 'Sidikalang', {robusta : 'Kapal Tanker', sachet : 'Kapal Tanker'}],
+    method : 'Manual Brewing',
+    category : 'Arabica',
+    name : 'Sevendays',
+    long : '-314324314',
+    lat : '111342454'
+})
+
+console.log(locationMap);
